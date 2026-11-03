@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Transparência | Creche Escola Estrelinha (Filial Mangabeira)</title>
+    <!-- Tailwind CSS para Estilização Moderna -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Topo / Cabeçalho Institucional -->
+    <header class="bg-blue-900 text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-3 md:mb-0">
+                <div class="bg-white p-2.5 rounded-full text-blue-900 font-bold text-xl shadow">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold">Creche Escola Estrelinha</h1>
+                    <p class="text-xs text-blue-200">Centro de Promoção da Cidadania do Recife | CNPJ: 10.542.422/0002-23 (Filial Mangabeira)</p>
+                </div>
+            </div>
+            <div class="text-xs bg-blue-800 px-3 py-2 rounded-lg border border-blue-700">
+                <span class="block font-semibold text-blue-300">Atendimento ao Cidadão (E-SIC)</span>
+                <span>Seg. a Sex. das 08h às 16h</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Navegação Principal -->
+    <nav class="bg-blue-800 shadow-inner sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-wrap justify-center md:justify-start space-x-1 md:space-x-4 text-sm font-medium">
+            <button onclick="mudarAba('institucional', this)" class="tab-btn px-4 py-3 text-white hover:bg-blue-700 transition border-b-4 border-white active-tab">Institucional</button>
+            <button onclick="mudarAba('quem-somos', this)" class="tab-btn px-4 py-3 text-blue-200 hover:bg-blue-700 hover:text-white transition border-b-4 border-transparent">Quem Somos</button>
+            <button onclick="mudarAba('transparencia', this)" class="tab-btn px-4 py-3 text-blue-200 hover:bg-blue-700 hover:text-white transition border-b-4 border-transparent">Transparência & Contas</button>
+            <button onclick="mudarAba('esic', this)" class="tab-btn px-4 py-3 text-blue-200 hover:bg-blue-700 hover:text-white transition border-b-4 border-transparent">E-SIC / Informações</button>
+            <button onclick="mudarAba('contato', this)" class="tab-btn px-4 py-3 text-blue-200 hover:bg-blue-700 hover:text-white transition border-b-4 border-transparent">Fale Conosco & FAQ</button>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Dinâmico das Abas -->
+    <main class="container mx-auto px-4 py-8 flex-grow max-w-6xl">
+
+        <!-- ABA 1: INSTITUCIONAL -->
+        <section id="institucional" class="tab-content space-y-6">
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4 flex items-center"><i class="fa-solid fa-building-columns mr-2"></i> Dados Cadastrais & Governança</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="font-bold text-blue-800 mb-2 border-b pb-1">Identificação da Entidade (Filial)</h3>
+                        <p class="text-sm"><strong>Razão Social:</strong> Centro de Promoção da Cidadania do Recife</p>
+                        <p class="text-sm"><strong>Nome Fantasia:</strong> Creche Escola Estrelinha (Filial Mangabeira)</p>
+                        <p class="text-sm"><strong>CNPJ:</strong> 10.542.422/0002-23</p>
+                        <p class="text-sm"><strong>Endereço:</strong> Rua Desembargador Heráclito Cavalcanti, 600, Mangabeira, Recife - PE, CEP: 52.110-390</p>
+                        <p class="text-sm"><strong>Telefone:</strong> (81) 9889-3568 | <strong>E-mail:</strong> estrelinhademangabeira@gmail.com</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="font-bold text-blue-800 mb-2 border-b pb-1">Diretoria Executiva (Mandato 2023-2027)</h3>
+                        <p class="text-sm"><strong>Diretora Presidente:</strong> Patrícia Nascimento Muniz</p>
+                        <p class="text-sm"><strong>Diretora Administrativa:</strong> Severina Gomes Lima de Andrade</p>
+                        <p class="text-sm"><strong>Diretor Financeiro:</strong> José Nilton Soares da Silva Filho</p>
+                        <p class="text-sm mt-2"><strong>Contador Responsável:</strong> Ginaldo Gomes Batista (CRC: 01-3253/02/PE)</p>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-3">Membros do Conselho Fiscal</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                            <p class="font-bold text-blue-900">Kamilla Maria Moura da Silva</p>
+                            <p class="text-xs text-slate-600">Técnica de Enfermagem</p>
+                        </div>
+                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                            <p class="font-bold text-blue-900">Sulamita Francisco da Silva</p>
+                            <p class="text-xs text-slate-600">Autônoma</p>
+                        </div>
+                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                            <p class="font-bold text-blue-900">Janaina Maria de Santana França</p>
+                            <p class="text-xs text-slate-600">Enfermeira</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-200">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-3">Documentos Institucionais Oficiais</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="estatuto.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-blue-900 text-sm font-medium rounded-lg border border-slate-300 transition">
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Estatuto Social Reformado (PDF)
+                        </a>
+                        <a href="ata-posse.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-blue-900 text-sm font-medium rounded-lg border border-slate-300 transition">
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Termo de Posse / Ata (PDF)
+                        </a>
+                        <a href="cnpj-filial.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-blue-900 text-sm font-medium rounded-lg border border-slate-300 transition">
+                            <i class="fa-solid fa-certificate text-amber-600 mr-2"></i> Comprovante CNPJ Filial (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 2: QUEM SOMOS -->
+        <section id="quem-somos" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4 flex items-center"><i class="fa-solid fa-heart mr-2"></i> Quem Somos & Finalidade Estatutária</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    O <strong>Centro de Promoção da Cidadania do Recife</strong> foi fundado em 12 de junho de 2007. A unidade <strong>Creche Escola Estrelinha (Filial Mangabeira)</strong> foi criada e registrada oficialmente em outubro de 2023 para expandir o atendimento educacional e assistencial no Estado de Pernambuco.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Desde a sua abertura em 2023, a Filial Mangabeira atua firmemente na oferta de educação infantil (creche e pré-escola) e suporte às famílias da comunidade, pautando suas ações nos princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e eficiência.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <h3 class="font-bold text-emerald-900 mb-1"><i class="fa-solid fa-bullseye mr-1"></i> Missão Institucional</h3>
+                        <p class="text-sm text-slate-700">Garantir o direito à educação infantil de qualidade e proteção social, promovendo o desenvolvimento pleno das crianças e fortalecendo os vínculos comunitários.</p>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg border border-amber-100">
+                        <h3 class="font-bold text-amber-900 mb-1"><i class="fa-solid fa-eye mr-1"></i> Atuação Conveniada</h3>
+                        <p class="text-sm text-slate-700">Desenvolvimento de parcerias com o Poder Público Municipal para expansão do atendimento educacional e prestação de contas transparente à sociedade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 3: TRANSPARÊNCIA & PRESTAÇÃO DE CONTAS -->
+        <section id="transparencia" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-blue-900 flex items-center"><i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas (Exercício 2025)</h2>
+                        <p class="text-sm text-slate-500">Dados oficiais validados pela contabilidade e em conformidade com as exigências do Ministério Público.</p>
+                    </div>
+                    <span class="mt-2 md:mt-0 bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Ano-Base: 2025</span>
+                </div>
+
+                <!-- Resumo de Recursos Recebidos -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 uppercase font-bold">Recursos Públicos (Parceria)</span>
+                        <p class="text-xl font-bold text-blue-900">R$ 2.286.698,49</p>
+                        <span class="text-xs text-slate-500">Termos de Colaboração/Fomento</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 uppercase font-bold">Doações Pessoas Físicas</span>
+                        <p class="text-xl font-bold text-emerald-700">R$ 1.606,91</p>
+                        <span class="text-xs text-slate-500">Doações Não Governamentais</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="text-xs text-slate-500 uppercase font-bold">Resultado do Exercício</span>
+                        <p class="text-xl font-bold text-blue-700">R$ 15.244,09</p>
+                        <span class="text-xs text-slate-500">Superávit Apurado</span>
+                    </div>
+                </div>
+
+                <!-- Tabela de Despesas Detalhadas -->
+                <h3 class="text-lg font-semibold text-slate-800 mb-3">Demonstrativo Consolidado de Receitas e Despesas (2025)</h3>
+                <div class="overflow-x-auto mb-8">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-blue-900 text-white">
+                                <th class="p-3">Rubrica / Categoria de Despesa</th>
+                                <th class="p-3 text-right">Valor Consolidado (R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-3">Recursos Humanos / Voluntários (Ressarcimento)</td>
+                                <td class="p-3 text-right font-medium text-slate-700">R$ 1.109.980,65</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Despesas Administrativas Gerais (Aluguel, Energia, Água, Internet, etc.)</td>
+                                <td class="p-3 text-right font-medium text-slate-700">R$ 497.318,62</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Prestação de Serviços por Pessoas Jurídicas</td>
+                                <td class="p-3 text-right font-medium text-slate-700">R$ 207.954,89</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Despesas Tributárias e Bancárias</td>
+                                <td class="p-3 text-right font-medium text-slate-700">R$ 11.002,12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Seção de Consultorias Técnicas -->
+                <h3 class="text-lg font-semibold text-slate-800 mb-3">Remuneração de Consultorias Técnicas (Exercício 2025)</h3>
+                <div class="overflow-x-auto mb-8">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="p-3">Beneficiário / Razão Social</th>
+                                <th class="p-3">Função / Categoria</th>
+                                <th class="p-3 text-right">Valor Total Anual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-3">Ginaldo Gomes Batista Júnior Ltda</td>
+                                <td class="p-3">Consultoria Contábil Técnica</td>
+                                <td class="p-3 text-right">R$ 24.000,00</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">Francisco Inglez de Souza</td>
+                                <td class="p-3">Consultoria Advocatícia</td>
+                                <td class="p-3 text-right">R$ 24.000,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Documentos Oficiais e Balanços -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-3">Balanços e Notas Explicativas Assinados (Downloads)</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="balanco-patrimonial-2025.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-900 text-sm font-medium rounded-lg border border-blue-200 transition">
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Balanço Patrimonial 2025
+                        </a>
+                        <a href="demonstrativo-receitas-despesas.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-900 text-sm font-medium rounded-lg border border-blue-200 transition">
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Demonstrativo de Receitas e Despesas
+                        </a>
+                        <a href="nota-explicativa-2025.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-900 text-sm font-medium rounded-lg border border-blue-200 transition">
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Nota Explicativa Contábil (Saneamento 2026)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 4: E-SIC (SISTEMA ELETRÔNICO DE INFORMAÇÕES) -->
+        <section id="esic" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+                <h2 class="text-2xl font-bold text-blue-900 mb-2 flex items-center"><i class="fa-solid fa-comments mr-2"></i> E-SIC (Serviço de Informação ao Cidadão)</h2>
+                <p class="text-sm text-slate-600 mb-6">Em conformidade com a Lei de Acesso à Informação, qualquer cidadão pode solicitar dados, certidões ou esclarecimentos sobre a gestão da creche.</p>
+
+                <form onsubmit="enviarEsic(event)" class="space-y-4 max-w-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nome Completo</label>
+                            <input type="text" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Seu nome completo">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">CPF</label>
+                            <input type="text" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="000.000.000-00">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">E-mail</label>
+                            <input type="email" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Telefone</label>
+                            <input type="text" class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="(81) 90000-0000">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Descrição do Pedido de Informação</label>
+                        <textarea rows="4" required class="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Digite detalhadamente a sua solicitação..."></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-white font-medium px-6 py-2 rounded-lg text-sm transition flex items-center">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Enviar Solicitação E-SIC
+                    </button>
+                </form>
+
+                <div id="sucesso-esic" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-sm">
+                    <i class="fa-solid fa-check-circle mr-1"></i> Solicitação registrada com sucesso! Um protocolo foi gerado para acompanhamento.
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA 5: FALE CONOSCO & FAQ -->
+        <section id="contato" class="tab-content hidden space-y-6">
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4 flex items-center"><i class="fa-solid fa-circle-question mr-2"></i> Fale Conosco & Perguntas Frequentes (FAQ)</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="font-bold text-blue-800 mb-2">Atendimento Presencial (SIC Físico)</h3>
+                        <p class="text-sm"><strong>Endereço:</strong> Rua Desembargador Heráclito Cavalcanti, 600, Mangabeira, Recife - PE</p>
+                        <p class="text-sm"><strong>Horário:</strong> Segunda a Sexta, das 08h às 16h</p>
+                        <p class="text-sm"><strong>Telefone:</strong> (81) 9889-3568</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h3 class="font-bold text-blue-800 mb-2">Canais Oficiais</h3>
+                        <p class="text-sm"><strong>E-mail:</strong> estrelinhademangabeira@gmail.com</p>
+                        <p class="text-sm"><strong>CNPJ:</strong> 10.542.422/0002-23 (Filial Mangabeira)</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Perguntas Frequentes (FAQ)</h3>
+                <div class="space-y-3">
+                    <div class="border rounded-lg p-4 bg-slate-50">
+                        <h4 class="font-bold text-blue-900 text-sm">1. Onde são aplicados os recursos públicos repassados à creche?</h4>
+                        <p class="text-xs text-slate-600 mt-1">Os recursos são integralmente aplicados na manutenção das atividades educacionais, alimentação escolar, remuneração de encargos/parceiros e despesas administrativas da filial, rigorosamente comprovadas em balancetes.</p>
+                    </div>
+                    <div class="border rounded-lg p-4 bg-slate-50">
+                        <h4 class="font-bold text-blue-900 text-sm">2. Como a população pode fiscalizar as contas da instituição?</h4>
+                        <p class="text-xs text-slate-600 mt-1">Através deste Portal da Transparência, que disponibiliza balanços contábeis, notas explicativas e demonstrativos mensais atualizados conforme exigência do Ministério Público.</p>
+                    </div>
+                    <div class="border rounded-lg p-4 bg-slate-50">
+                        <h4 class="font-bold text-blue-900 text-sm">3. Qual o prazo de resposta para solicitações feitas via E-SIC?</h4>
+                        <p class="text-xs text-slate-600 mt-1">As demandas cadastradas no sistema eletrônico de informações são respondidas no prazo legal regulamentado pela Lei de Acesso à Informação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-900 text-white py-6 mt-auto">
+        <div class="container mx-auto px-4 text-center text-xs text-slate-400">
+            <p>Creche Escola Estrelinha (Centro de Promoção da Cidadania do Recife) | CNPJ: 10.542.422/0002-23</p>
+            <p class="mt-1">Portal da Transparência desenvolvido em atendimento às diretrizes do Ministério Público e legislação vigente.</p>
+        </div>
+    </footer>
+
+    <!-- Script de Navegação entre Abas -->
+    <script>
+        function mudarAba(idAba, elementoBotao) {
+            document.querySelectorAll('.tab-content').forEach(secao => {
+                secao.classList.add('hidden');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-white', 'text-white');
+                btn.classList.add('border-transparent', 'text-blue-200');
+            });
+            document.getElementById(idAba).classList.remove('hidden');
+            elementoBotao.classList.remove('border-transparent', 'text-blue-200');
+            elementoBotao.classList.add('border-white', 'text-white');
+        }
+
+        function enviarEsic(event) {
+            event.preventDefault();
+            document.getElementById('sucesso-esic').classList.remove('hidden');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
