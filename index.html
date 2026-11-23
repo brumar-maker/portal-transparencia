@@ -129,7 +129,7 @@
             <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b pb-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-blue-900 flex items-center"><i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas (Exercício 2025)</h2>
+                        <h2 id="titulo-prestacao-contas" class="text-2xl font-bold text-blue-900 flex items-center"><i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas (Exercício 2025)</h2>
                         <p class="text-sm text-slate-500">Dados oficiais validados pela contabilidade e em conformidade com as exigências do Ministério Público.</p>
                     </div>
                     <div class="flex items-center gap-2">
@@ -145,20 +145,20 @@
 
                 <!-- Resumo de Recursos Recebidos -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <span class="text-xs text-slate-500 uppercase font-bold">Recursos Públicos (Parceria)</span>
-                        <p class="text-xl font-bold text-blue-900">R$ 2.286.698,49</p>
-                        <span class="text-xs text-slate-500">Termos de Colaboração/Fomento</span>
+                    <div data-resumo-card class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Recursos Públicos (Parceria)</span>
+                        <p data-card-valor class="text-xl font-bold text-blue-900">R$ 2.286.698,49</p>
+                        <span data-card-sub class="text-xs text-slate-500">Termos de Colaboração/Fomento</span>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <span class="text-xs text-slate-500 uppercase font-bold">Doações Pessoas Físicas</span>
-                        <p class="text-xl font-bold text-emerald-700">R$ 1.606,91</p>
-                        <span class="text-xs text-slate-500">Doações Não Governamentais</span>
+                    <div data-resumo-card class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Doações Pessoas Físicas</span>
+                        <p data-card-valor class="text-xl font-bold text-emerald-700">R$ 1.606,91</p>
+                        <span data-card-sub class="text-xs text-slate-500">Doações Não Governamentais</span>
                     </div>
-                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <span class="text-xs text-slate-500 uppercase font-bold">Resultado do Exercício</span>
-                        <p class="text-xl font-bold text-blue-700">R$ 15.244,09</p>
-                        <span class="text-xs text-slate-500">Superávit Apurado</span>
+                    <div data-resumo-card class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Resultado do Exercício</span>
+                        <p data-card-valor class="text-xl font-bold text-blue-700">R$ 15.244,09</p>
+                        <span data-card-sub class="text-xs text-slate-500">Superávit Apurado</span>
                     </div>
                 </div>
 
@@ -173,7 +173,7 @@
                                 <th id="col-pct-dre" class="p-3 text-right hidden">% s/ Receita</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-200">
+                        <tbody id="corpo-tabela-dre" class="divide-y divide-slate-200">
                             <tr>
                                 <td class="p-3">Recursos Humanos / Voluntários (Ressarcimento)</td>
                                 <td class="p-3 text-right font-medium text-slate-700">R$ 1.109.980,65</td>
@@ -413,9 +413,24 @@
         }
       };
 
+      function capturarHtml2025() {
+        const tb = document.getElementById("corpo-tabela-dre");
+        if (tb && !tb.dataset.html2025) {
+          tb.dataset.html2025 = tb.innerHTML;
+        }
+      }
+
       function alternarAnoBase(ano) {
+        capturarHtml2025();
         const info = dadosTransparencia[ano];
         if (!info) return;
+
+        const tituloSecao = document.getElementById("titulo-prestacao-contas");
+        if (tituloSecao) {
+          tituloSecao.innerHTML = ano === "2026"
+            ? '<i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas Parcial (30/06/2026)'
+            : '<i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas (Exercício 2025)';
+        }
 
         const badge = document.getElementById("badge-ano-base");
         if (badge) badge.textContent = info.periodo;
@@ -432,7 +447,6 @@
           if (subEl) subEl.textContent = item.subtitulo;
         });
 
-        // COLE AQUI A ATUALIZAÇÃO DA TABELA (antes de fechar a função alternarAnoBase):
         const tituloTabela = document.getElementById("titulo-tabela-dre");
         const tbody = document.getElementById("corpo-tabela-dre");
         const colPct = document.getElementById("col-pct-dre");
@@ -456,15 +470,10 @@
           if (colPct) colPct.classList.add("hidden");
           tbody.innerHTML = tbody.dataset.html2025;
         }
-      } // <-- FIM da função alternarAnoBase
+      }
 
-      // COLE ESTE BLOCO LOGO APÓS O FECHAMENTO DA FUNÇÃO (ainda dentro de <script>):
-      document.addEventListener("DOMContentLoaded", () => {
-        const tb = document.getElementById("corpo-tabela-dre");
-        if (tb && !tb.dataset.html2025) {
-          tb.dataset.html2025 = tb.innerHTML;
-        }
-      });
+      document.addEventListener("DOMContentLoaded", capturarHtml2025);
+      capturarHtml2025();
     </script>
 </body>
 </html>
