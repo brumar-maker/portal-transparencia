@@ -132,7 +132,15 @@
                         <h2 class="text-2xl font-bold text-blue-900 flex items-center"><i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas (Exercício 2025)</h2>
                         <p class="text-sm text-slate-500">Dados oficiais validados pela contabilidade e em conformidade com as exigências do Ministério Público.</p>
                     </div>
-                    <span class="mt-2 md:mt-0 bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Ano-Base: 2025</span>
+                    <div class="flex items-center gap-2">
+                       <label for="select-ano-base" class="text-sm font-medium text-slate-600">Ano-Base:</label>
+                       <select id="select-ano-base" onchange="alternarAnoBase(this.value)"
+                         class="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-semibold text-slate-800 shadow-sm focus:border-blue-600 focus:outline-none">
+                         <option value="2025" selected>2025 (Consolidado)</option>
+                         <option value="2026">2026 (Parcial - 1º Semestre)</option>
+                       </select>
+                       <span id="badge-ano-base" class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Ano-Base: 2025 (Consolidado)</span>
+                    </div>
                 </div>
 
                 <!-- Resumo de Recursos Recebidos -->
@@ -155,13 +163,14 @@
                 </div>
 
                 <!-- Tabela de Despesas Detalhadas -->
-                <h3 class="text-lg font-semibold text-slate-800 mb-3">Demonstrativo Consolidado de Receitas e Despesas (2025)</h3>
+                <h3 id="titulo-tabela-dre" class="text-lg font-semibold text-slate-800 mb-3">Demonstrativo Consolidado de Receitas e Despesas (2025)</h3>
                 <div class="overflow-x-auto mb-8">
                     <table class="w-full text-left border-collapse text-sm">
                         <thead>
                             <tr class="bg-blue-900 text-white">
-                                <th class="p-3">Rubrica / Categoria de Despesa</th>
-                                <th class="p-3 text-right">Valor Consolidado (R$)</th>
+                                <th class="p-3">Rubrica / Grupo Contábil</th>
+                                <th class="p-3 text-right">Valor (R$)</th>
+                                <th id="col-pct-dre" class="p-3 text-right hidden">% s/ Receita</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200">
@@ -219,10 +228,21 @@
                             <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Balanço Patrimonial 2025
                         </a>
                         <a href="demonstrativo-receitas-despesas.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-900 text-sm font-medium rounded-lg border border-blue-200 transition">
-                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Demonstrativo de Receitas e Despesas
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Demonstrativo de Receitas e Despesas 2025
                         </a>
                         <a href="nota-explicativa-2025.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-900 text-sm font-medium rounded-lg border border-blue-200 transition">
-                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Nota Explicativa Contábil (Saneamento 2026)
+                            <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Nota Explicativa Contábil (Saneamento 2025)
+                        </a>
+                        <a href="./Relatório Parcial DRE 2026 - Centro de Promoção da Cidadania do Recife.pdf"
+                           download="Relatório Parcial DRE 2026 - Centro de Promoção da Cidadania do Recife.pdf"
+                           class="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-4 transition hover:border-blue-500 hover:bg-blue-50/40">
+                          <div>
+                            <p class="font-semibold text-slate-800">Demonstrativo de Receitas e Despesas (Parcial)</p>
+                            <p class="text-xs text-slate-500">DRE Analítica • Posição em 30/06/2026 (PDF)</p>
+                          </div>
+                          <span class="rounded-md bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white">
+                            Baixar PDF
+                          </span>
                         </a>
                     </div>
                 </div>
@@ -338,6 +358,113 @@
             document.getElementById('sucesso-esic').classList.remove('hidden');
             event.target.reset();
         }
+    </script>
+    <script>
+      const dadosTransparencia = {
+        "2025": {
+          periodo: "Ano-Base: 2025 (Consolidado)",
+          cards: [
+            {
+              titulo: "Recursos Públicos (Parceria)",
+              valor: "R$ 2.286.698,49",
+              subtitulo: "Termos de Colaboração/Fomento"
+            },
+            {
+              titulo: "Doações Pessoas Físicas",
+              valor: "R$ 1.606,91",
+              subtitulo: "Doações Não Governamentais"
+            },
+            {
+              titulo: "Resultado do Exercício",
+              valor: "R$ 15.244,09",
+              subtitulo: "Superávit Apurado"
+            }
+          ]
+        },
+        "2026": {
+          periodo: "Ano-Base: 2026 (Parcial - 30/06/2026)",
+          cards: [
+            {
+              titulo: "Receita Bruta (Parceria)",
+              valor: "R$ 1.421.342,75",
+              subtitulo: "Termos de Colaboração/Fomento"
+            },
+            {
+              titulo: "Despesas Totais",
+              valor: "R$ 1.397.441,98",
+              subtitulo: "Apuração Parcial em 30/06/2026"
+            },
+            {
+              titulo: "Resultado do Exercício",
+              valor: "R$ 23.900,77",
+              subtitulo: "Superávit Parcial (1,68%)"
+            }
+          ],
+          grupos: [
+            { nome: "Receita Bruta (Termos de Colaboração/Fomento)", valor: "R$ 1.421.342,75", pct: "100,00%" },
+            { nome: "Despesas com Recursos Humanos", valor: "(R$ 323.574,21)", pct: "22,77%" },
+            { nome: "Despesas Administrativas", valor: "(R$ 779.675,83)", pct: "54,85%" },
+            { nome: "Honorários Contábeis", valor: "(R$ 12.600,00)", pct: "0,89%" },
+            { nome: "Honorários da Diretoria", valor: "(R$ 264.694,88)", pct: "18,62%" },
+            { nome: "Despesas Financeiras", valor: "(R$ 13.917,34)", pct: "0,98%" },
+            { nome: "Despesas Tributárias", valor: "(R$ 15.579,72)", pct: "1,10%" },
+            { nome: "Resultado do Exercício (Superávit Parcial)", valor: "R$ 23.900,77", pct: "1,68%" }
+          ]
+        }
+      };
+
+      function alternarAnoBase(ano) {
+        const info = dadosTransparencia[ano];
+        if (!info) return;
+
+        const badge = document.getElementById("badge-ano-base");
+        if (badge) badge.textContent = info.periodo;
+
+        const cardsEl = document.querySelectorAll("[data-resumo-card]");
+        cardsEl.forEach((card, idx) => {
+          const item = info.cards[idx];
+          if (!item) return;
+          const tituloEl = card.querySelector("[data-card-titulo]");
+          const valorEl = card.querySelector("[data-card-valor]");
+          const subEl = card.querySelector("[data-card-sub]");
+          if (tituloEl) tituloEl.textContent = item.titulo;
+          if (valorEl) valorEl.textContent = item.valor;
+          if (subEl) subEl.textContent = item.subtitulo;
+        });
+
+        // COLE AQUI A ATUALIZAÇÃO DA TABELA (antes de fechar a função alternarAnoBase):
+        const tituloTabela = document.getElementById("titulo-tabela-dre");
+        const tbody = document.getElementById("corpo-tabela-dre");
+        const colPct = document.getElementById("col-pct-dre");
+
+        if (tituloTabela) {
+          tituloTabela.textContent = ano === "2026"
+            ? "Síntese por Grupo de Contas — DRE Parcial (30/06/2026)"
+            : "Demonstrativo Consolidado de Receitas e Despesas (2025)";
+        }
+
+        if (tbody && info.grupos) {
+          if (colPct) colPct.classList.remove("hidden");
+          tbody.innerHTML = info.grupos.map(g => `
+            <tr class="border-b border-slate-200 hover:bg-slate-50">
+              <td class="p-3 font-medium text-slate-800">${g.nome}</td>
+              <td class="p-3 text-right font-semibold text-slate-900">${g.valor}</td>
+              <td class="p-3 text-right text-slate-600">${g.pct}</td>
+            </tr>
+          `).join("");
+        } else if (tbody && tbody.dataset.html2025) {
+          if (colPct) colPct.classList.add("hidden");
+          tbody.innerHTML = tbody.dataset.html2025;
+        }
+      } // <-- FIM da função alternarAnoBase
+
+      // COLE ESTE BLOCO LOGO APÓS O FECHAMENTO DA FUNÇÃO (ainda dentro de <script>):
+      document.addEventListener("DOMContentLoaded", () => {
+        const tb = document.getElementById("corpo-tabela-dre");
+        if (tb && !tb.dataset.html2025) {
+          tb.dataset.html2025 = tb.innerHTML;
+        }
+      });
     </script>
 </body>
 </html>
