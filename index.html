@@ -129,66 +129,90 @@
             <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b pb-4">
                     <div>
-                        <h2 id="titulo-prestacao-contas" class="text-2xl font-bold text-blue-900 flex items-center"><i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas (Exercício 2025)</h2>
+                        <h2 id="titulo-prestacao-contas" class="text-2xl font-bold text-blue-900 flex items-center"><i class="fa-solid fa-file-invoice-dollar mr-2"></i> Prestação de Contas Parcial (30/06/2026)</h2>
                         <p class="text-sm text-slate-500">Dados oficiais validados pela contabilidade e em conformidade com as exigências do Ministério Público.</p>
                     </div>
                     <div class="flex items-center gap-2">
                        <label for="select-ano-base" class="text-sm font-medium text-slate-600">Ano-Base:</label>
                        <select id="select-ano-base" onchange="alternarAnoBase(this.value)"
                          class="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-semibold text-slate-800 shadow-sm focus:border-blue-600 focus:outline-none">
-                         <option value="2025" selected>2025 (Consolidado)</option>
-                         <option value="2026">2026 (Parcial - 1º Semestre)</option>
+                         <option value="2026" selected>2026 (Parcial - 1º Semestre)</option>
+                         <option value="2025">2025 (Consolidado)</option>
                        </select>
-                       <span id="badge-ano-base" class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Ano-Base: 2025 (Consolidado)</span>
+                       <span id="badge-ano-base" class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Ano-Base: 2026 (Parcial - 30/06/2026)</span>
                     </div>
                 </div>
 
                 <!-- Resumo de Recursos Recebidos -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                     <div data-resumo-card class="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Recursos Públicos (Parceria)</span>
-                        <p data-card-valor class="text-xl font-bold text-blue-900">R$ 2.286.698,49</p>
+                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Receita Bruta (Parceria)</span>
+                        <p data-card-valor class="text-xl font-bold text-blue-900">R$ 1.421.342,75</p>
                         <span data-card-sub class="text-xs text-slate-500">Termos de Colaboração/Fomento</span>
                     </div>
                     <div data-resumo-card class="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Doações Pessoas Físicas</span>
-                        <p data-card-valor class="text-xl font-bold text-emerald-700">R$ 1.606,91</p>
-                        <span data-card-sub class="text-xs text-slate-500">Doações Não Governamentais</span>
+                        <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Despesas Totais</span>
+                        <p data-card-valor class="text-xl font-bold text-emerald-700">R$ 1.397.441,98</p>
+                        <span data-card-sub class="text-xs text-slate-500">Apuração Parcial em 30/06/2026</span>
                     </div>
                     <div data-resumo-card class="p-4 bg-slate-50 rounded-lg border border-slate-200">
                         <span data-card-titulo class="text-xs text-slate-500 uppercase font-bold">Resultado do Exercício</span>
-                        <p data-card-valor class="text-xl font-bold text-blue-700">R$ 15.244,09</p>
-                        <span data-card-sub class="text-xs text-slate-500">Superávit Apurado</span>
+                        <p data-card-valor class="text-xl font-bold text-blue-700">R$ 23.900,77</p>
+                        <span data-card-sub class="text-xs text-slate-500">Superávit Parcial (1,68%)</span>
                     </div>
                 </div>
 
                 <!-- Tabela de Despesas Detalhadas -->
-                <h3 id="titulo-tabela-dre" class="text-lg font-semibold text-slate-800 mb-3">Demonstrativo Consolidado de Receitas e Despesas (2025)</h3>
+                <h3 id="titulo-tabela-dre" class="text-lg font-semibold text-slate-800 mb-3">Síntese por Grupo de Contas — DRE Parcial (30/06/2026)</h3>
                 <div class="overflow-x-auto mb-8">
                     <table class="w-full text-left border-collapse text-sm">
                         <thead>
                             <tr class="bg-blue-900 text-white">
                                 <th class="p-3">Rubrica / Grupo Contábil</th>
                                 <th class="p-3 text-right">Valor (R$)</th>
-                                <th id="col-pct-dre" class="p-3 text-right hidden">% s/ Receita</th>
+                                <th id="col-pct-dre" class="p-3 text-right">% s/ Receita</th>
                             </tr>
                         </thead>
                         <tbody id="corpo-tabela-dre" class="divide-y divide-slate-200">
-                            <tr>
-                                <td class="p-3">Recursos Humanos / Voluntários (Ressarcimento)</td>
-                                <td class="p-3 text-right font-medium text-slate-700">R$ 1.109.980,65</td>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Receita Bruta (Termos de Colaboração/Fomento)</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">R$ 1.421.342,75</td>
+                                <td class="p-3 text-right text-slate-600">100,00%</td>
                             </tr>
-                            <tr>
-                                <td class="p-3">Despesas Administrativas Gerais (Aluguel, Energia, Água, Internet, etc.)</td>
-                                <td class="p-3 text-right font-medium text-slate-700">R$ 497.318,62</td>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Despesas com Recursos Humanos</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">(R$ 323.574,21)</td>
+                                <td class="p-3 text-right text-slate-600">22,77%</td>
                             </tr>
-                            <tr>
-                                <td class="p-3">Prestação de Serviços por Pessoas Jurídicas</td>
-                                <td class="p-3 text-right font-medium text-slate-700">R$ 207.954,89</td>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Despesas Administrativas</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">(R$ 779.675,83)</td>
+                                <td class="p-3 text-right text-slate-600">54,85%</td>
                             </tr>
-                            <tr>
-                                <td class="p-3">Despesas Tributárias e Bancárias</td>
-                                <td class="p-3 text-right font-medium text-slate-700">R$ 11.002,12</td>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Honorários Contábeis</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">(R$ 12.600,00)</td>
+                                <td class="p-3 text-right text-slate-600">0,89%</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Honorários da Diretoria</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">(R$ 264.694,88)</td>
+                                <td class="p-3 text-right text-slate-600">18,62%</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Despesas Financeiras</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">(R$ 13.917,34)</td>
+                                <td class="p-3 text-right text-slate-600">0,98%</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Despesas Tributárias</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">(R$ 15.579,72)</td>
+                                <td class="p-3 text-right text-slate-600">1,10%</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                                <td class="p-3 font-medium text-slate-800">Resultado do Exercício (Superávit Parcial)</td>
+                                <td class="p-3 text-right font-semibold text-slate-900">R$ 23.900,77</td>
+                                <td class="p-3 text-right text-slate-600">1,68%</td>
                             </tr>
                         </tbody>
                     </table>
@@ -360,6 +384,25 @@
         }
     </script>
     <script>
+      const html2025Padrao = `
+        <tr>
+            <td class="p-3">Recursos Humanos / Voluntários (Ressarcimento)</td>
+            <td class="p-3 text-right font-medium text-slate-700">R$ 1.109.980,65</td>
+        </tr>
+        <tr>
+            <td class="p-3">Despesas Administrativas Gerais (Aluguel, Energia, Água, Internet, etc.)</td>
+            <td class="p-3 text-right font-medium text-slate-700">R$ 497.318,62</td>
+        </tr>
+        <tr>
+            <td class="p-3">Prestação de Serviços por Pessoas Jurídicas</td>
+            <td class="p-3 text-right font-medium text-slate-700">R$ 207.954,89</td>
+        </tr>
+        <tr>
+            <td class="p-3">Despesas Tributárias e Bancárias</td>
+            <td class="p-3 text-right font-medium text-slate-700">R$ 11.002,12</td>
+        </tr>
+      `;
+
       const dadosTransparencia = {
         "2025": {
           periodo: "Ano-Base: 2025 (Consolidado)",
@@ -413,15 +456,7 @@
         }
       };
 
-      function capturarHtml2025() {
-        const tb = document.getElementById("corpo-tabela-dre");
-        if (tb && !tb.dataset.html2025) {
-          tb.dataset.html2025 = tb.innerHTML;
-        }
-      }
-
       function alternarAnoBase(ano) {
-        capturarHtml2025();
         const info = dadosTransparencia[ano];
         if (!info) return;
 
@@ -466,14 +501,17 @@
               <td class="p-3 text-right text-slate-600">${g.pct}</td>
             </tr>
           `).join("");
-        } else if (tbody && tbody.dataset.html2025) {
+        } else if (tbody) {
           if (colPct) colPct.classList.add("hidden");
-          tbody.innerHTML = tbody.dataset.html2025;
+          tbody.innerHTML = html2025Padrao;
         }
       }
 
-      document.addEventListener("DOMContentLoaded", capturarHtml2025);
-      capturarHtml2025();
+      document.addEventListener("DOMContentLoaded", () => {
+        const sel = document.getElementById("select-ano-base");
+        if (sel) sel.value = "2026";
+        alternarAnoBase("2026");
+      });
     </script>
 </body>
 </html>
